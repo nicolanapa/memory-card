@@ -10,7 +10,7 @@ h1 {
 	display: inline-flex;
 	font-size: calc(16px + 1vw);
 	font-weight: 600;
-	margin: 15px 20px;
+	margin: 15px 5px;
 	border-bottom: 2.5px solid pink;
 }
 
@@ -22,7 +22,7 @@ h1 {
 .scores {
 	display: flex;
 	align-items: center;
-	gap: 40%;
+	gap: calc(30% - 1vw);
 	font-style: italic;
 	font-weight: 500;
 }
