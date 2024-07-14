@@ -15,7 +15,7 @@ function Scores() {
 
 function Header() {
 	return (
-		<div>
+		<div className="header-container">
 			<Title />
 			<Scores />
 		</div>
