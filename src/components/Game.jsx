@@ -38,6 +38,10 @@ async function CardChooser() {
 			}
 		}*/
 
+		if (tempID >= 1025) {
+			tempID = 10001 + (tempID - 1025);
+		}
+
 		let tempPokemon = await fetch("https://pokeapi.co/api/v2/pokemon/" + tempID + "/");
 
 		/*while (!tempPokemon.ok) {
@@ -91,7 +95,7 @@ function Game() {
 			setHtmlCards(tempAllCards.htmlCards);
 		}
 		fetchData();
-	});
+	}, []);
 
 	return (
 		<main>
