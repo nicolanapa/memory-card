@@ -7,9 +7,14 @@
 	margin: 0;
 }
 
+h1,
+h3,
+.scores > p {
+	font-family: "Kanit", "Roboto Flex", roboto, system-ui;
+}
+
 h1 {
 	display: inline-flex;
-	font-family: "Kanit", "Roboto Flex", roboto, system-ui;
 	font-size: calc(16px + 1vw);
 	font-weight: 600;
 	margin: 15px 5px;
@@ -31,10 +36,6 @@ h3 {
 	gap: calc(30% - 1vw);
 	font-style: italic;
 	font-weight: 500;
-}
-
-.scores > p {
-	font-family: "Kanit", "Roboto Flex", roboto, system-ui;
 }
 
 footer {
