@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "../styles/game.css";
 
-function Card({ pokemonName, /*pokemonDescription,*/ pokemonSvg, key }) {
+function Card({ pokemonName, /*pokemonDescription,*/ pokemonSvg }) {
 	return (
-		<div className="card" key={key}>
+		<div className="card">
 			<img src={pokemonSvg} alt={pokemonName} />
 			<h2>{pokemonName}</h2>
 			{/*<p>{pokemonDescription}</p>*/}
