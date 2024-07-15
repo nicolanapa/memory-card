@@ -9,6 +9,7 @@ function Footer() {
 				<p>
 					The API used to take Informations and Images about Pokémons is <a href="https://pokeapi.co/">PokéAPI</a>
 				</p>
+				<p>The fonts used are &quot;Roboto Flex&quot; and &quot;Kanit&quot; from Google Fonts</p>
 			</div>
 		</footer>
 	);
