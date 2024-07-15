@@ -15,9 +15,9 @@ function Scores() {
 
 function Game() {
 	return (
-		<div>
+		<main>
 			<Scores />
-		</div>
+		</main>
 	);
 }
 
