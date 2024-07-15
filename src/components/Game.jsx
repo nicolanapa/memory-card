@@ -99,6 +99,8 @@ function Game() {
 		fetchData();
 	}, []);
 
+	// useEffect to make a variable similar to htmlCards State
+
 	return (
 		<main>
 			<Scores score={score} />
