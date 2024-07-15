@@ -14,15 +14,46 @@ function Card({ pokemonName, /*pokemonDescription,*/ pokemonSvg, key }) {
 function CardMover() {}
 
 async function CardChooser() {
+	const delay = (ms) => new Promise((res) => setTimeout(res, ms));
+
 	let cards = [];
 	let allPokemons = 1302;
 	let allID = [];
 	for (let i = 0; i < 6; i++) {
-		allID.push(Math.floor(Math.random() * allPokemons));
+		let tempID = Math.floor(Math.random() * allPokemons) + 1;
+		let differentID = false;
 
-		let tempPokemon = await fetch("https://pokeapi.co/api/v2/pokemon/" + allID[i] + "/");
+		/*while (differentID !== true) {
+			if (allID.length === 0) {
+				differentID = true;
+			} else {
+				for (let i2 = 0; i2 < allID.length; i++) {
+					if (allID[i2] === tempID) {
+						tempID = Math.floor(Math.random() * allPokemons) + 1;
+						differentID = false;
+					} else if (i2 === allID.length - 1) {
+						differentID = true;
+					}
+				}
+			}
+		}*/
+
+		let tempPokemon = await fetch("https://pokeapi.co/api/v2/pokemon/" + tempID + "/");
+
+		/*while (!tempPokemon.ok) {
+			pauseBrowser(5000);
+
+			tempID = Math.floor(Math.random() * allPokemons);
+			tempPokemon = await fetch("https://pokeapi.co/api/v2/pokemon/" + tempID + "/");
+		}*/
+
+		allID.push(tempID);
+
 		tempPokemon = await tempPokemon.json();
 		cards.push(tempPokemon);
+
+		console.log(i);
+		//await delay(1000);
 	}
 	console.log(cards);
 	console.log(allID);
