@@ -20,7 +20,7 @@ async function CardChooser() {
 	let cards = [];
 	let allPokemons = 1302;
 	let allID = [];
-	for (let i = 0; i < 6; i++) {
+	for (let i = 0; i < 10; i++) {
 		let tempID = Math.floor(Math.random() * allPokemons) + 1;
 		let differentID = false;
 
@@ -64,7 +64,7 @@ async function CardChooser() {
 	console.log(allID);
 
 	let htmlCards = [];
-	for (let i = 0; i < 6; i++) {
+	for (let i = 0; i < 10; i++) {
 		htmlCards.push(
 			<Card
 				pokemonName={cards[i].name}
