@@ -4,9 +4,10 @@ import "../styles/game.css";
 function Card({ pokemonName, /*pokemonDescription,*/ pokemonSvg }) {
 	return (
 		<div className="card">
-			<img src={pokemonSvg} alt={pokemonName} />
-			<h2>{pokemonName}</h2>
+			<h2>{pokemonName.charAt(0).toUpperCase() + pokemonName.slice(1)}</h2>
 			{/*<p>{pokemonDescription}</p>*/}
+
+			<img src={pokemonSvg} alt={pokemonName} />
 		</div>
 	);
 }
