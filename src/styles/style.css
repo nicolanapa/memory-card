@@ -32,6 +32,7 @@ h3 {
 
 .scores {
 	display: flex;
+	justify-content: center;
 	align-items: center;
 	gap: calc(30% - 1vw);
 	font-style: italic;
