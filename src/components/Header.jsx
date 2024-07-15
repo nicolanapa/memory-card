@@ -10,9 +10,9 @@ function Title() {
 
 function Header() {
 	return (
-		<div className="header-container">
+		<header className="header-container">
 			<Title />
-		</div>
+		</header>
 	);
 }
 
