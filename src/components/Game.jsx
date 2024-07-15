@@ -75,11 +75,11 @@ async function CardChooser() {
 	return { cards, htmlCards };
 }
 
-function Scores() {
+function Scores(props) {
 	return (
 		<div className="scores">
-			<p>Score: {}</p>
-			<p>Best Score: {}</p>
+			<p>Score: {props.score.current}</p>
+			<p>Best Score: {props.score.best}</p>
 		</div>
 	);
 }
@@ -87,6 +87,7 @@ function Scores() {
 function Game() {
 	const [allCards, setAllCards] = useState();
 	const [htmlCards, setHtmlCards] = useState();
+	const [score, setScore] = useState({ current: 0, best: 0 });
 
 	useEffect(() => {
 		async function fetchData() {
@@ -99,7 +100,7 @@ function Game() {
 
 	return (
 		<main>
-			<Scores />
+			<Scores score={score} />
 			<section className="card-container">{htmlCards}</section>
 		</main>
 	);
