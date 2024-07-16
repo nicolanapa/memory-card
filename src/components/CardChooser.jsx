@@ -11,20 +11,17 @@ async function CardChooser() {
 		let tempID = Math.floor(Math.random() * allPokemons) + 1;
 		let differentID = false;
 
-		/*while (differentID !== true) {
+		do {
 			if (allID.length === 0) {
 				differentID = true;
 			} else {
-				for (let i2 = 0; i2 < allID.length; i++) {
-					if (allID[i2] === tempID) {
-						tempID = Math.floor(Math.random() * allPokemons) + 1;
-						differentID = false;
-					} else if (i2 === allID.length - 1) {
-						differentID = true;
-					}
+				if (allID.includes(tempID)) {
+					tempID = Math.floor(Math.random() * allPokemons) + 1;
+				} else {
+					differentID = true;
 				}
 			}
-		}*/
+		} while (differentID === false);
 
 		if (tempID >= 1025) {
 			tempID = 10001 + (tempID - 1025);
