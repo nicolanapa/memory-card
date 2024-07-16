@@ -19,8 +19,7 @@ function Game() {
 		fetchData();
 	}, []);
 
-	// Move some functiona in  specific files
-	// useEffect to make a variable similar to htmlCards State
+	// useEffect or similar to make a variable similar to htmlCards State
 
 	return (
 		<main>
