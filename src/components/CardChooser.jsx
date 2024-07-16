@@ -31,14 +31,6 @@ async function CardChooser() {
 		}
 
 		let tempPokemon = await fetch("https://pokeapi.co/api/v2/pokemon/" + tempID + "/");
-
-		/*while (!tempPokemon.ok) {
-			pauseBrowser(5000);
-
-			tempID = Math.floor(Math.random() * allPokemons);
-			tempPokemon = await fetch("https://pokeapi.co/api/v2/pokemon/" + tempID + "/");
-		}*/
-
 		allID.push(tempID);
 
 		tempPokemon = await tempPokemon.json();
