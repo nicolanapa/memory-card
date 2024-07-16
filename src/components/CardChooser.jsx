@@ -52,13 +52,20 @@ async function CardChooser() {
 
 	let htmlCards = [];
 	for (let i = 0; i < 10; i++) {
-		htmlCards.push(
-			<Card
-				pokemonName={cards[i].name}
-				/*pokemonDescription={}*/ pokemonSvg={cards[i].sprites.other.dream_world.front_default}
-				key={cards[i].id}
-			/>
-		);
+		if (cards[i].sprites.other.dream_world.front_default === null) {
+			//console.log("NULL: ", cards[i]);
+			htmlCards.push(
+				<Card pokemonName={cards[i].name} /*pokemonDescription={}*/ pokemonSvg={cards[i].sprites.front_default} key={cards[i].id} />
+			);
+		} else {
+			htmlCards.push(
+				<Card
+					pokemonName={cards[i].name}
+					/*pokemonDescription={}*/ pokemonSvg={cards[i].sprites.other.dream_world.front_default}
+					key={cards[i].id}
+				/>
+			);
+		}
 	}
 	return { cards, htmlCards };
 }
