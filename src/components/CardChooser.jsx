@@ -51,7 +51,7 @@ async function CardChooser() {
 					/>
 				);
 			} else {
-				// If the high resolution doesn't exist then choose this
+				// If the high resolution Image doesn't exist then choose this
 				// Highly unlikely
 				// Pixel-variation
 
