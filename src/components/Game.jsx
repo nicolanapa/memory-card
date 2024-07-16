@@ -1,17 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../styles/game.css";
-
-function Card({ pokemonName, /*pokemonDescription,*/ pokemonSvg }) {
-	return (
-		<div className="card">
-			<h2>{pokemonName.charAt(0).toUpperCase() + pokemonName.slice(1)}</h2>
-			{/*<p>{pokemonDescription}</p>*/}
-
-			<img src={pokemonSvg} alt={pokemonName} />
-		</div>
-	);
-}
-
+import { Card } from "./Card.jsx";
 function CardMover() {}
 
 async function CardChooser() {
@@ -99,6 +88,7 @@ function Game() {
 		fetchData();
 	}, []);
 
+	// Move some functiona in  specific files
 	// useEffect to make a variable similar to htmlCards State
 
 	return (
