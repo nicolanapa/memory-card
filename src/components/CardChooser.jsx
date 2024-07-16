@@ -5,7 +5,12 @@ async function CardChooser() {
 	const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
 	let cards = [];
-	let allPokemons = 1302;
+
+	// To get the latest updated Pokemon count
+	let allPokemons = /*1302*/ await fetch("https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0");
+	allPokemons = await allPokemons.json();
+	allPokemons = allPokemons.count;
+
 	let allID = [];
 	for (let i = 0; i < 10; i++) {
 		let tempID = Math.floor(Math.random() * allPokemons) + 1;
