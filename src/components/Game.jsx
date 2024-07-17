@@ -16,10 +16,14 @@ function Game() {
 		async function fetchData() {
 			let tempAllCards = await cardChooser();
 			setAllCards(tempAllCards);
-			setHtmlCards(CardHtml(tempAllCards, hasClicked));
+			setHtmlCards(CardHtml(tempAllCards, hasClicked, setHasClicked));
 		}
 		fetchData();
 	}, []);
+
+	useEffect(() => {
+		console.log("UPDATING", hasClicked);
+	}, [hasClicked]);
 
 	// useEffect or similar to make a variable similar to htmlCards State
 
