@@ -16,7 +16,7 @@ function Game() {
 		async function fetchData() {
 			let tempAllCards = await cardChooser();
 			setAllCards(tempAllCards);
-			setHtmlCards(CardHtml(tempAllCards));
+			setHtmlCards(CardHtml(tempAllCards, hasClicked));
 		}
 		fetchData();
 	}, []);
