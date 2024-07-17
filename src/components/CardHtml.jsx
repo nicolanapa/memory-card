@@ -3,7 +3,7 @@ import { Card } from "./Card";
 
 function CardHtml(cards) {
 	let htmlCards = [];
-	console.log("Test", cards);
+    
 	for (let i = 0; i < 10; i++) {
 		if (cards[i].sprites.other.dream_world.front_default === null) {
 			if (cards[i]["sprites"]["other"]["official-artwork"]["front_default"] !== null) {
