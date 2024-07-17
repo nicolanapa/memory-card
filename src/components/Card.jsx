@@ -1,7 +1,7 @@
 import React from "react";
 import { CardMover } from "./CardMover";
 
-function Card({ pokemonName, /*pokemonDescription,*/ pokemonSvg, hasClicked, setHasClicked, position }) {
+function Card({ pokemonName, /*pokemonDescription,*/ pokemonSvg, hasClicked, setHasClicked, position, score, setScore }) {
 	function replaceAt(array, index, value) {
 		array[index] = value;
 		console.log(array);
@@ -11,14 +11,32 @@ function Card({ pokemonName, /*pokemonDescription,*/ pokemonSvg, hasClicked, set
 	function settingClicked() {
 		if (hasClicked[position] === 0) {
 			setHasClicked(replaceAt(hasClicked, position, 1));
-			CardMover();
+
+			if (score.actual + 1 > score.bestScore) {
+				score.actual = score.actual + 1;
+				score.bestScore = score.actual;
+				setScore({ actual: score.actual, bestScore: score.bestScore });
+
+				if (score.actual === 10) {
+					alert("Max Score!");
+					score.actual = 0;
+					setScore({ actual: score.actual, bestScore: score.bestScore });
+				}
+			} else {
+				score.actual = score.actual + 1;
+				setScore({ actual: score.actual + 1, bestScore: score.bestScore });
+			}
 		} else {
-			// 0 1
-			setHasClicked(replaceAt(hasClicked, position, 0));
-			CardMover();
+			for (let i = 0; i < 10; i++) {
+				hasClicked[i] = 0;
+			}
+			setHasClicked(hasClicked);
+			score.actual = 0;
+			setScore({ actual: 0, bestScore: score.bestScore });
 		}
 
 		//console.log("INTERNAL POSITION " + position, hasClicked);
+		CardMover();
 	}
 
 	return (
