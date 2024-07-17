@@ -1,10 +1,10 @@
 import React from "react";
 
-function Scores(props) {
+function Scores({ score }) {
 	return (
 		<div className="scores">
-			<p>Score: {props.score.current}</p>
-			<p>Best Score: {props.score.best}</p>
+			<p>Score: {score.score}</p>
+			<p>Best Score: {score.bestScore}</p>
 		</div>
 	);
 }
