@@ -1,9 +1,9 @@
 import React from "react";
 import { Card } from "./Card";
 
-function CardHtml(cards) {
+function CardHtml(cards, hasClicked) {
 	let htmlCards = [];
-    
+
 	for (let i = 0; i < 10; i++) {
 		if (cards[i].sprites.other.dream_world.front_default === null) {
 			if (cards[i]["sprites"]["other"]["official-artwork"]["front_default"] !== null) {
@@ -11,6 +11,7 @@ function CardHtml(cards) {
 					<Card
 						pokemonName={cards[i].name}
 						/*pokemonDescription={}*/ pokemonSvg={cards[i]["sprites"]["other"]["official-artwork"]["front_default"]}
+						hasClicked={hasClicked[i]}
 						key={cards[i].id}
 					/>
 				);
@@ -23,6 +24,7 @@ function CardHtml(cards) {
 					<Card
 						pokemonName={cards[i].name}
 						/*pokemonDescription={}*/ pokemonSvg={cards[i].sprites.front_default}
+						hasClicked={hasClicked[i]}
 						key={cards[i].id}
 					/>
 				);
@@ -32,6 +34,7 @@ function CardHtml(cards) {
 				<Card
 					pokemonName={cards[i].name}
 					/*pokemonDescription={}*/ pokemonSvg={cards[i].sprites.other.dream_world.front_default}
+					hasClicked={hasClicked[i]}
 					key={cards[i].id}
 				/>
 			);
