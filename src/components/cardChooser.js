@@ -1,6 +1,3 @@
-import React from "react";
-import { Card } from "./Card.jsx";
-
 async function cardChooser() {
 	const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
