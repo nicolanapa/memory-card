@@ -1,7 +1,7 @@
 import React from "react";
 import { Card } from "./Card";
 
-function CardHtml(cards, hasClicked, setHasClicked) {
+function CardHtml(cards, hasClicked, setHasClicked, score, setScore) {
 	let htmlCards = [];
 
 	for (let i = 0; i < 10; i++) {
@@ -14,6 +14,8 @@ function CardHtml(cards, hasClicked, setHasClicked) {
 						hasClicked={hasClicked}
 						setHasClicked={setHasClicked}
 						position={i}
+						score={score}
+						setScore={setScore}
 						key={cards[i].id}
 					/>
 				);
@@ -29,6 +31,8 @@ function CardHtml(cards, hasClicked, setHasClicked) {
 						hasClicked={hasClicked}
 						setHasClicked={setHasClicked}
 						position={i}
+						score={score}
+						setScore={setScore}
 						key={cards[i].id}
 					/>
 				);
@@ -41,6 +45,8 @@ function CardHtml(cards, hasClicked, setHasClicked) {
 					hasClicked={hasClicked}
 					setHasClicked={setHasClicked}
 					position={i}
+					score={score}
+					setScore={setScore}
 					key={cards[i].id}
 				/>
 			);
