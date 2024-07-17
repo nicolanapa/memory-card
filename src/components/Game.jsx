@@ -12,6 +12,9 @@ function Game() {
 	const [htmlCards, setHtmlCards] = useState();
 	const [score, setScore] = useState({ actual: 0, bestScore: 0 });
 
+	// Randomize directly allCards and hasClicked States
+	// Then call CardHtml to get the updated htmlCards State
+
 	useEffect(() => {
 		async function fetchData() {
 			let tempAllCards = await cardChooser();
@@ -33,7 +36,7 @@ function Game() {
 
 	return (
 		<main>
-			<Scores score={score}/>
+			<Scores score={score} />
 			<section className="card-container">{htmlCards}</section>
 		</main>
 	);
