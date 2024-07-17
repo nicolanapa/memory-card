@@ -4,17 +4,19 @@ import { Card } from "./Card.jsx";
 import { Scores } from "./Scores.jsx";
 import { CardChooser } from "./CardChooser.jsx";
 import { CardMover } from "./CardMover.jsx";
+import { CardHtml } from "./CardHtml.jsx";
 
 function Game() {
 	const [allCards, setAllCards] = useState();
+	const [hasClicked, setHasClicked] = useState(Array(10).fill(0));
 	const [htmlCards, setHtmlCards] = useState();
 	const [score, setScore] = useState({ current: 0, best: 0 });
 
 	useEffect(() => {
 		async function fetchData() {
 			let tempAllCards = await CardChooser();
-			setAllCards(tempAllCards.cards);
-			setHtmlCards(tempAllCards.htmlCards);
+			setAllCards(tempAllCards);
+			setHtmlCards(CardHtml(tempAllCards));
 		}
 		fetchData();
 	}, []);
