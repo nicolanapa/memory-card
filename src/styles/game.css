@@ -26,7 +26,6 @@ h2 {
 .card {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 	border: none;
 	border-radius: 20px;
 	background-color: rgb(243, 241, 241);
@@ -34,6 +33,7 @@ h2 {
 }
 
 .card > img {
+	align-self: center;
 	width: 200px;
 	height: auto;
 }
