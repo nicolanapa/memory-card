@@ -1,4 +1,5 @@
 h2 {
+	align-self: flex-start;
 	margin: 10px 0 10px 20px;
 	font-style: italic;
 	font-size: calc(16px + 0.25vw);
@@ -17,12 +18,15 @@ h2 {
 
 .card-container {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
 	gap: 25px;
 	margin: 10px;
 }
 
 .card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	border: none;
 	border-radius: 20px;
 	background-color: rgb(243, 241, 241);
