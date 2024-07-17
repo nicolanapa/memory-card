@@ -18,7 +18,7 @@ function Card({ pokemonName, /*pokemonDescription,*/ pokemonSvg, hasClicked, set
 			CardMover();
 		}
 
-		console.log("INTERNAL POSITION " + position, hasClicked);
+		//console.log("INTERNAL POSITION " + position, hasClicked);
 	}
 
 	return (
