@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../styles/game.css";
-import { Card } from "./Card.jsx";
 import { Scores } from "./Scores.jsx";
 import { cardChooser } from "./cardChooser.js";
-import { CardMover } from "./CardMover.jsx";
 import { CardHtml } from "./CardHtml.jsx";
 
 function Game() {
