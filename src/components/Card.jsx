@@ -41,7 +41,7 @@ function Card({ pokemonName, /*pokemonDescription,*/ pokemonSvg, hasClicked, set
 		}
 
 		//console.log("INTERNAL POSITION " + position, hasClicked);
-		CardMover();
+		setHasClicked(CardMover(new Array(10), hasClicked).hasClicked);
 	}
 
 	return (
