@@ -1,16 +1,7 @@
 import React from "react";
 import { CardMover } from "./CardMover";
 
-function Card({
-	pokemonName,
-	/*pokemonDescription,*/ pokemonSvg,
-	hasClicked,
-	setHasClicked,
-	position,
-	score,
-	setScore,
-	setPrevHasClicked,
-}) {
+function Card({ pokemonName, /*pokemonDescription,*/ pokemonSvg, hasClicked, setHasClicked, position, score, setScore, allCards, setAllCards }) {
 	function replaceAt(array, index, value) {
 		array[index] = value;
 		console.log(array);
@@ -50,8 +41,9 @@ function Card({
 		}
 
 		//console.log("INTERNAL POSITION " + position, hasClicked);
-		setPrevHasClicked(hasClicked);
-		setHasClicked(CardMover(hasClicked));
+		let newMoving = CardMover(allCards, hasClicked);
+		setAllCards(newMoving.allCards);
+		setHasClicked(newMoving.hasClicked);
 	}
 
 	return (
