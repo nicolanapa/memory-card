@@ -26,6 +26,10 @@ function Game() {
 
 	useEffect(() => {
 		console.log("UPDATING CLICKING", hasClicked);
+		if (!Object.is(hasClicked, hasClicked)) {
+			setAllCards();
+			setHtmlCards();
+		}
 	}, [hasClicked]);
 
 	useEffect(() => {
