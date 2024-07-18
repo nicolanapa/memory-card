@@ -7,9 +7,10 @@ import { CardMover } from "./CardMover.jsx";
 import { CardHtml } from "./CardHtml.jsx";
 
 function Game() {
-	const [allCards, setAllCards] = useState();
+	const [allCards, setAllCards] = useState([]);
 	const [hasClicked, setHasClicked] = useState(Array(10).fill(0));
-	const [htmlCards, setHtmlCards] = useState();
+	const [prevHasClicked, setPrevHasClicked] = useState(Array(10).fill(0));
+	const [htmlCards, setHtmlCards] = useState(null);
 	const [score, setScore] = useState({ actual: 0, bestScore: 0 });
 
 	// Randomize directly allCards and hasClicked States
@@ -19,18 +20,23 @@ function Game() {
 		async function fetchData() {
 			let tempAllCards = await cardChooser();
 			setAllCards(tempAllCards);
-			setHtmlCards(CardHtml(tempAllCards, hasClicked, setHasClicked, score, setScore));
 		}
 		fetchData();
 	}, []);
 
 	useEffect(() => {
-		console.log("UPDATING CLICKING", hasClicked);
-		if (!Object.is(hasClicked, hasClicked)) {
-			setAllCards();
-			setHtmlCards();
+		console.log("ALL CARDS", allCards);
+		if (allCards.length > 0) {
+			setHtmlCards(CardHtml(allCards, hasClicked, setHasClicked, score, setScore, setPrevHasClicked));
 		}
-	}, [hasClicked]);
+	}, [allCards]);
+
+	useEffect(() => {
+		console.log("UPDATING CLICKING", hasClicked);
+		if (Object.is(prevHasClicked, hasClicked)) {
+			console.log("hasClicked has changed!");
+		}
+	}, [prevHasClicked, hasClicked]);
 
 	useEffect(() => {
 		console.log("UPDATING SCORING", score);
