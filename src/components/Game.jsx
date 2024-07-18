@@ -9,7 +9,6 @@ import { CardHtml } from "./CardHtml.jsx";
 function Game() {
 	const [allCards, setAllCards] = useState([]);
 	const [hasClicked, setHasClicked] = useState(Array(10).fill(0));
-	const [prevHasClicked, setPrevHasClicked] = useState(Array(10).fill(0));
 	const [htmlCards, setHtmlCards] = useState(null);
 	const [score, setScore] = useState({ actual: 0, bestScore: 0 });
 
@@ -27,17 +26,32 @@ function Game() {
 	useEffect(() => {
 		console.log("ALL CARDS", allCards);
 		if (allCards.length > 0) {
-			setHtmlCards(CardHtml(allCards, hasClicked, setHasClicked, score, setScore, setPrevHasClicked));
+			setHtmlCards(CardHtml(allCards, hasClicked, setHasClicked, score, setScore, allCards, setAllCards));
 		}
-	}, [allCards]);
+	}, [hasClicked, allCards, score]);
 
 	useEffect(() => {
 		console.log("UPDATING CLICKING", hasClicked);
-		if (Object.is(prevHasClicked, hasClicked)) {
+		/*if (Object.is(prevHasClicked, hasClicked)) {
 			console.log("hasClicked has changed!");
-			console.log(allCards);
-		}
-	});
+			let allCardsOld = allCards.slice();
+			let allCardsNew = allCards.slice();
+
+			for (let i = 0; i < 10; i++) {
+				for (let i2 = 0; i2 < 10; i2++) {
+					if (prevHasClicked[i] === 0) {
+						if (hasClicked[i2] === 1) {
+							let cardTemp = prevHasClicked[i];
+							allCardsNew[i] = allCardsOld[i2];
+							allCardsNew[i2] = cardTemp;
+						}
+					}
+				}
+			}
+
+			setAllCards(allCardsNew)
+		}*/
+	}, [hasClicked]);
 
 	useEffect(() => {
 		console.log("UPDATING SCORING", score);
