@@ -1,7 +1,7 @@
 import React from "react";
 import { Card } from "./Card";
 
-function CardHtml(cards, hasClicked, setHasClicked, score, setScore) {
+function CardHtml(cards, hasClicked, setHasClicked, score, setScore, setPrevHasClicked) {
 	let htmlCards = [];
 
 	for (let i = 0; i < 10; i++) {
@@ -16,6 +16,7 @@ function CardHtml(cards, hasClicked, setHasClicked, score, setScore) {
 						position={i}
 						score={score}
 						setScore={setScore}
+						setPrevHasClicked={setPrevHasClicked}
 						key={cards[i].id}
 					/>
 				);
@@ -33,6 +34,7 @@ function CardHtml(cards, hasClicked, setHasClicked, score, setScore) {
 						position={i}
 						score={score}
 						setScore={setScore}
+						setPrevHasClicked={setPrevHasClicked}
 						key={cards[i].id}
 					/>
 				);
@@ -47,6 +49,7 @@ function CardHtml(cards, hasClicked, setHasClicked, score, setScore) {
 					position={i}
 					score={score}
 					setScore={setScore}
+					setPrevHasClicked={setPrevHasClicked}
 					key={cards[i].id}
 				/>
 			);
