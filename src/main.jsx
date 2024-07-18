@@ -6,9 +6,11 @@ import { Game } from "./components/Game.jsx";
 import { Footer } from "./components/Footer.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-	<React.StrictMode>
+	//<React.StrictMode>
+	<>
 		<Header />
 		<Game />
 		<Footer />
-	</React.StrictMode>
+	</>
+	//</React.StrictMode>
 );
