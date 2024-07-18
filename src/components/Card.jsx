@@ -51,7 +51,7 @@ function Card({
 
 		//console.log("INTERNAL POSITION " + position, hasClicked);
 		setPrevHasClicked(hasClicked);
-		setHasClicked(CardMover(new Array(10), hasClicked).hasClicked);
+		setHasClicked(CardMover(hasClicked));
 	}
 
 	return (
