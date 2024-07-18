@@ -35,8 +35,9 @@ function Game() {
 		console.log("UPDATING CLICKING", hasClicked);
 		if (Object.is(prevHasClicked, hasClicked)) {
 			console.log("hasClicked has changed!");
+			console.log(allCards);
 		}
-	}, [prevHasClicked, hasClicked]);
+	});
 
 	useEffect(() => {
 		console.log("UPDATING SCORING", score);
