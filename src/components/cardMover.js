@@ -1,4 +1,4 @@
-function CardMover(allCards, hasClicked) {
+function cardMover(allCards, hasClicked) {
 	console.log("BEFORE MOVING", allCards, hasClicked);
 
 	for (let i = 0; i < 10; i++) {
@@ -16,4 +16,4 @@ function CardMover(allCards, hasClicked) {
 	return { allCards, hasClicked };
 }
 
-export { CardMover };
+export { cardMover };
