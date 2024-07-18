@@ -1,6 +1,4 @@
 async function cardChooser() {
-	const delay = (ms) => new Promise((res) => setTimeout(res, ms));
-
 	let cards = [];
 
 	// To get the latest updated Pokemon count
@@ -34,12 +32,10 @@ async function cardChooser() {
 
 		tempPokemon = await tempPokemon.json();
 		cards.push(tempPokemon);
-
-		console.log(i);
-		//await delay(1000);
 	}
-	console.log(cards);
-	console.log(allID);
+
+	//console.log(cards);
+	//console.log(allID);
 
 	return cards;
 }

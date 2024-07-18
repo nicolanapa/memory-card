@@ -4,7 +4,6 @@ import { cardMover } from "./cardMover.js";
 function Card({ pokemonName, /*pokemonDescription,*/ pokemonSvg, hasClicked, setHasClicked, position, score, setScore, allCards, setAllCards }) {
 	function replaceAt(array, index, value) {
 		array[index] = value;
-		console.log(array);
 		return array;
 	}
 
@@ -40,7 +39,6 @@ function Card({ pokemonName, /*pokemonDescription,*/ pokemonSvg, hasClicked, set
 			setScore({ actual: score.actual, bestScore: score.bestScore });
 		}
 
-		//console.log("INTERNAL POSITION " + position, hasClicked);
 		let newMoving = cardMover(allCards, hasClicked);
 		setAllCards(newMoving.allCards);
 		setHasClicked(newMoving.hasClicked);

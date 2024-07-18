@@ -1,5 +1,5 @@
 function cardMover(allCards, hasClicked) {
-	console.log("BEFORE MOVING", allCards, hasClicked);
+	//console.log("BEFORE MOVING", allCards, hasClicked);
 
 	for (let i = 0; i < 10; i++) {
 		let numberToRandomize = Math.floor(Math.random() * 10);
@@ -11,7 +11,7 @@ function cardMover(allCards, hasClicked) {
 		hasClicked[numberToRandomize] = tempHasClicked;
 	}
 
-	console.log("AFTER MOVING", allCards, hasClicked);
+	//console.log("AFTER MOVING", allCards, hasClicked);
 
 	return { allCards, hasClicked };
 }
